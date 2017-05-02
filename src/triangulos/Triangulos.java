@@ -8,7 +8,9 @@ import java.util.Scanner;
  */
 public class Triangulos {
 
-    public void validacaoDeTriangulos(int a, int b, int c){
+    
+    
+    public Boolean validacaoDeTriangulos(int a, int b, int c){
         // Condição de existência do triângulo
         if (((Math.abs(b - c) < a) && (a < (b + c))) && ((Math.abs(a - c) < b) && (b < (a + c))) && ((Math.abs(a - b) < c) && (c < (a + b)))) {
             if (a == b && a == c) {
@@ -18,8 +20,10 @@ public class Triangulos {
             } else {
                 System.out.println("Isosceles");
             }
+            return true;
         } else {
             System.out.println("Não é triângulo.");
+            return false;
         }
 
     }
