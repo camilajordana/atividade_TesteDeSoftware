@@ -8,26 +8,25 @@ import java.util.Scanner;
  */
 public class Triangulos {
 
-    
-    
-    public Boolean validacaoDeTriangulos(int a, int b, int c){
+    public String validacaoDeTriangulos(int a, int b, int c) {
         // Condição de existência do triângulo
+        String retorno;
         if (((Math.abs(b - c) < a) && (a < (b + c))) && ((Math.abs(a - c) < b) && (b < (a + c))) && ((Math.abs(a - b) < c) && (c < (a + b)))) {
             if (a == b && a == c) {
-                System.out.println("Esquilátero");
+                retorno = "Esquilátero";
             } else if (a != b && b != c && a != c) {
-                System.out.println("Escaleno");
+                retorno = "Escaleno";
             } else {
-                System.out.println("Isosceles");
+                retorno = "Isosceles";
             }
-            return true;
         } else {
-            System.out.println("Não é triângulo.");
-            return false;
+            retorno = "Não é triângulo";
         }
 
+        return retorno;
+
     }
-    
+
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
@@ -43,9 +42,9 @@ public class Triangulos {
         System.out.println("Informe o lado C: ");
         c = entrada.nextInt();
 
-        triangulo.validacaoDeTriangulos(a,b,c);
+        System.out.println(triangulo.validacaoDeTriangulos(a, b, c));
         
+
     }
 
-    
 }

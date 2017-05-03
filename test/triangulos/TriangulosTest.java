@@ -45,11 +45,13 @@ public class TriangulosTest {
      */
     @Test
     public void testValidacaoDeTriangulos() {
-        assertEquals(true, t.validacaoDeTriangulos(6, 6, 6));
-        assertEquals(true, t.validacaoDeTriangulos(5, 6, 6));
-        assertEquals(true, t.validacaoDeTriangulos(3, 3, 4));
-        assertEquals(true, t.validacaoDeTriangulos(5, 4, 7));
-        assertEquals(false, t.validacaoDeTriangulos(1, 2, 3));
+        assertEquals("Esquilátero", t.validacaoDeTriangulos(6, 6, 6));
+        assertEquals("Isosceles", t.validacaoDeTriangulos(5, 6, 6));
+        assertEquals("Isosceles", t.validacaoDeTriangulos(3, 3, 4));
+        assertEquals("Escaleno", t.validacaoDeTriangulos(5, 4, 7));
+        assertEquals("Não é triângulo", t.validacaoDeTriangulos(1, 2, 3));
+        assertEquals("Não é triângulo", t.validacaoDeTriangulos(-1, 2, 3));
+        
     }
 
     /**
